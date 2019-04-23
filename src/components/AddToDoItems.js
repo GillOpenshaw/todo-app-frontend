@@ -7,7 +7,7 @@ class AddToDoItems extends Component {
         <form>
           <label>Add a new travel task:</label>
           <input type="text" />
-          <button type="button">Add</button>
+          <button className="btn btn-primary btn-sm m-2">Add</button>
         </form>
       </div>
     );

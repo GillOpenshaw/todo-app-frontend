@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 // import './App.css';
 import AddToDoItems from "./components/AddToDoItems";
 import TravelListItems from "./components/TravelListItems";
+import Header from "./components/Header";
 
 const toDoListItems = [
-  "Train tickets",
+  "Travel tickets",
   "Accommodation",
   "Theatre tickets",
   "Restaurant",
@@ -16,15 +17,24 @@ const toDoListItems = [
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <h1>My London Travel Wizard</h1>
-          <h4>Compile your travel itinerary here</h4>
-          <ul>
-          {toDoListItems.map(function(item) {
-            return <TravelListItems task={item} />;
-          })}
-        </ul>
-        <AddToDoItems />
+      <div class="container"> {/* Container div */}
+
+        <div className="App"> {/* App div */}
+
+          <Header />
+
+          <h4>Build your own travel itinerary here:</h4>
+
+          <AddToDoItems />
+
+          <ol>
+            {toDoListItems.map(function (item) {
+              return <TravelListItems task={item} />;
+            })}
+          </ol>
+
+        </div> {/* End App div */}
+
       </div>
     );
   }
