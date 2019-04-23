@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Globe from "./components/Globe.jpg";
+import Globe from "./Globe.jpg";
 
 class Header extends Component {
     render() {
