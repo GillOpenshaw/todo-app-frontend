@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import ThingsToBook from "./components/ThingsToBook"
 import Tips from "./components/Tips"
 
+
 const toDoListItems = [
   "Travel tickets",
   "Accommodation",
