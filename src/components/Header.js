@@ -1,15 +1,23 @@
 import React, { Component } from "react";
-import Globe from "./Globe.jpg";
+import LondonFlagSmall from "./LondonFlagSmall.png";
 
 class Header extends Component {
     render() {
         return (
-            <div>
-                <h1>My London Travel Wizard</h1>
-                <img src={Globe} alt="Globe" /> 
+            <div col-12>
+                <p>
+                    <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1></p>
             </div>
         );
     }
 }
+
+const styles = {
+    header : {
+        color: "blue",
+        textAlign: "center"
+    }
+};
+
 export default Header;
 

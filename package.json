@@ -115,5 +115,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "react-image-resizer": "^1.3.0"
   }
 }

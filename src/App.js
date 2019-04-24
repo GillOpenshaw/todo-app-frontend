@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 // import './App.css';
 import AddToDoItems from "./components/AddToDoItems";
 import TravelListItems from "./components/TravelListItems";
 import Header from "./components/Header";
+import ThingsToBook from "./components/ThingsToBook"
+import Tips from "./components/Tips"
 
 const toDoListItems = [
   "Travel tickets",
@@ -21,19 +22,31 @@ class App extends Component {
 
         <div className="App"> {/* App div */}
 
-          <Header />
+          <div className="row">
+            <Header />
+          </div>
 
-          <h4>Build your own travel itinerary here:</h4>
+          <div className="row">
 
-          <AddToDoItems />
+            <div className="col-md-5 col-sm-12 col-xs-12">
+              <AddToDoItems />
+              <ol>
+                {toDoListItems.map(function (item) {
+                  return <TravelListItems task={item} />;
+                })}
+              </ol>
+            </div>
 
-          <ol>
-            {toDoListItems.map(function (item) {
-              return <TravelListItems task={item} />;
-            })}
-          </ol>
+            <div className="col-md-6 col-sm-12 col-xs-12" >
+              <ThingsToBook />
+            </div>
 
-        </div> {/* End App div */}
+            <div className="col-md-1 col-sm-12 col-xs-12" >
+              <Tips />
+            </div>
+          </div>
+
+        </div>
 
       </div>
     );
