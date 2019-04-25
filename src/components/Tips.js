@@ -9,11 +9,11 @@ class Tips extends Component {
                 </div>
 
                 <div class="row">
-                    <h6 className="text-center bg-success text-white">Look out for Kids Week theatre tickets from June 2019</h6>
+                    <h6 className="text-center bg-light text-dark">Look out for Kids Week theatre tickets from June 2019</h6>
                 </div>
 
                 <div class="row">
-                    <h6 className="text-center bg-light text-dark">Cheaper train tickets go on sale approx 12-14 weeks before travel</h6>
+                    <h6 className="text-center bg-success text-white">Cheaper train tickets go on sale approx 12-14 weeks before travel</h6>
                 </div>
 
                 <div class="row">

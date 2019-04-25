@@ -4,92 +4,50 @@ class ThingsToBook extends Component {
     render() {
         return (
             <div>
-                            <p><h4 className="text-center bg-primary text-white">Explore ideas for your trip</h4></p>                         
-                            <table class="table table-bordered table-sm">
+                <p><h4 className="text-center bg-primary text-white">Explore ideas for your trip</h4></p>
+                <table class="table table-bordered table-sm">
                     <tbody>
                         <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Travel</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Travel</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Accommodation</h5></td>
                         </tr>
                         <tr>
-                            <td className="text-center bg-info text-white">To London</td>
-                            <td className="text-center bg-info text-white">Around London</td>
+                            <td className="text-center bg-info text-white">To London and Around London</td>
+                            <td className="text-center bg-info text-white">Where best to stay</td>
                         </tr>
                         <tr>
                             <td className="text-center">Pic of train</td>
-                            <td className="text-center">Pic of London bus</td>
-                        </tr>
-                        <tr>
-                            <tr><p></p></tr>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Accommodation</h5></td>
-                        </tr>
-                        <tr>
-                            <td className="text-center bg-info text-white">Deals</td>
-                            <td className="text-center bg-info text-white">Advance Booking</td>
-                        </tr>
-                        <tr>
-                            <td className="text-center">Pic of hotel</td>
                             <td className="text-center">Pic of hotel</td>
                         </tr>
                         <tr>
                             <tr><p></p></tr>
                         </tr>
                         <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Theatre Tickets</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Theatre Tickets</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Food and Drink</h5></td>
                         </tr>
                         <tr>
-                            <td className="text-center bg-info text-white">KidsWeek</td>
-                            <td className="text-center bg-info text-white">Today Tix</td>
+                            <td className="text-center bg-info text-white">Kids Week and Discounted Tickets</td>
+                            <td className="text-center bg-info text-white">Near your hotel or theatre</td>
                         </tr>
                         <tr>
-                            <td className="text-center">Pic of Kids Week</td>
-                            <td className="text-center">Pic of Today Tix App</td>
-                        </tr>
-                        <tr>
-                            <tr><p></p></tr>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Food and Drink</h5></td>
-                        </tr>
-                        <tr>
-                            <td className="text-center bg-info text-white">Restaurants</td>
-                            <td className="text-center bg-info text-white">Ice Cream</td>
-                        </tr>
-                        <tr>
-                            <td className="text-center">Pic of restaurant</td>
+                            <td className="text-center">Pic of theatre</td>
                             <td className="text-center">Pic of ice cream</td>
                         </tr>
                         <tr>
                             <tr><p></p></tr>
                         </tr>
                         <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Activities</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Activities</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Shopping</h5></td>
                         </tr>
                         <tr>
-                            <td className="text-center bg-info text-white">Walking Tours</td>
-                            <td className="text-center bg-info text-white">Attractions</td>
+                            <td className="text-center bg-info text-white">Attractions, Walking Tours and more!</td>
+                            <td className="text-center bg-info text-white">From High Street, to Hamleys, to London Markets</td>
                         </tr>
                         <tr>
-                            <td className="text-center">Pic of Strawberry Tour</td>
-                            <td className="text-center">Pic of london eye</td>
-                        </tr>
-                        <tr>
-                            <tr><p></p></tr>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><h5 className="text-center font-weight-bold text-primary">Shopping</h5></td>
-                        </tr>
-                        <tr>
-                            <td className="text-center bg-info text-white">High Street</td>
-                            <td className="text-center bg-info text-white">Markets</td>
-                        </tr>
-                        <tr>
-                            <td className="text-center">Pic of Oxford Street</td>
-                            <td className="text-center">Pic of Camden market</td>
-                        </tr>
-                        <tr>
-                            <tr><p></p></tr>
+                            <td className="text-center">Pic of London Eye</td>
+                            <td className="text-center">Pic of Camden Market</td>
                         </tr>
                     </tbody>
                 </table>
