@@ -1,15 +1,30 @@
 import React, { Component } from "react";
 
 class AddToDoItems extends Component {
+
+  state = {
+    taskDescription: ""
+  }
+
+  inputBoxChanged = (event) => {
+    this.setState(
+      {
+        taskDescription: event.target.value
+      });
+  }
+
+  addTaskClicked = () => {
+    this.props.addTaskFunction(this.state.taskDescription);
+  }
+
   render() {
     return (
       <div>
         <h4 className="text-center bg-primary text-white">Build your itinerary here:</h4>
         <form>
           <label className="font-weight-bold">Add a new travel task:</label>
-          <input type="text" />
-          <button className="btn btn-primary btn-sm m-2">Add</button>
-          <p className="font-weight-bold">Click Done when task is complete</p>
+          <input type="text" onChange={this.inputBoxChanged} />
+          <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add</button>
         </form>
       </div>
     );

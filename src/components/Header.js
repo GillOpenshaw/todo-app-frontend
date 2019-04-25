@@ -4,7 +4,7 @@ import LondonFlagSmall from "./LondonFlagSmall.png";
 class Header extends Component {
     render() {
         return (
-            <div col-12>
+            <div>
                 <p>
                     <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1></p>
             </div>
@@ -13,7 +13,7 @@ class Header extends Component {
 }
 
 const styles = {
-    header : {
+    header: {
         color: "blue",
         textAlign: "center"
     }

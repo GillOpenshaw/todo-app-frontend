@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import VirginTrain from "./VirginTrain.jpg";
+import LondonBus from "./LondonBus.jpg";
 
 class ThingsToBook extends Component {
     render() {
@@ -16,7 +18,7 @@ class ThingsToBook extends Component {
                             <td className="text-center bg-info text-white">Where best to stay</td>
                         </tr>
                         <tr>
-                            <td className="text-center">Pic of train</td>
+                            <td className="text-center"><h6> <img src={VirginTrain} alt="Virgin Train" /> <img src={LondonBus} alt="London Bus" /></h6></td>
                             <td className="text-center">Pic of hotel</td>
                         </tr>
                         <tr>
