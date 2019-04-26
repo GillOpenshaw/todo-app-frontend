@@ -11,6 +11,14 @@ class App extends Component {
 
   render() {
 
+    const tasks = [
+      "Buy train tickets",
+      "Book hotel",
+      "Buy theatre tickets",
+      "Book restaurant",
+      "Book Walking Tour"
+    ]
+
     return (
       <div class="container"> {/* Container div */}
 
@@ -32,10 +40,19 @@ class App extends Component {
               <ItineraryTally />
             </div>
 
+            <div className="row">
+              <ItineraryList />
+            </div>
 
             <div className="row">
-              <p>Itinerary List:</p>
-              <ItineraryList />
+              <div className="col">
+                {
+                  tasks.map(function (item, index) {
+                    return <ItineraryList taskDescription={item} key=
+                      {index} />
+                  })
+                }
+              </div>
             </div>
 
           </div>

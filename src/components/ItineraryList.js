@@ -5,10 +5,10 @@ class TaskDisplay extends Component {
     render() {
 
         return (
-            <div>
+            <div className="row">
 
                 <div>
-                    <p>Itinerary list to be displayed here</p>
+                    {this.props.taskDescription}
                 </div>
                 <div>
                     <button type="button">Done</button>
@@ -17,7 +17,7 @@ class TaskDisplay extends Component {
                     <button type="button">Delete</button>
                 </div>
 
-            </div>
+            </div >
         );
     }
 }

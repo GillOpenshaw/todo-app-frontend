@@ -7,7 +7,6 @@ class AddToDoItems extends Component {
     return (
       <div>
         <h4 className="text-center bg-primary text-white">Build your itinerary here:</h4>
-
         <form>
           <label className="font-weight-bold">Add a new travel task:</label>
           <input type="text" />
