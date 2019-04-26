@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import LondonFlagSmall from "./LondonFlagSmall.png";
 
 class Header extends Component {
+
     render() {
+
         return (
             <div>
                 <p>

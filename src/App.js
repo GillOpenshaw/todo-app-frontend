@@ -1,54 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
-import AddToDoItems from "./components/AddToDoItems";
 import Header from "./components/Header";
+import AddItineraryItem from "./components/AddItineraryItem";
+import ItineraryList from "./components/ItineraryList"
+import ItineraryTally from "./components/ItineraryTally"
 import ThingsToBook from "./components/ThingsToBook"
 import Tips from "./components/Tips"
-import TaskDisplay from "./components/TaskDisplay"
-import TaskCounter from "./components/TaskCounter"
 
 class App extends Component {
 
-  state = {
-    tasks: []
-  }
-
-  addTask = (taskDescription) => {
-    let currentTasks = this.state.tasks;
-    currentTasks.push(taskDescription);
-    this.setState({
-      tasks: currentTasks
-    });
-  }
-
   render() {
+
     return (
       <div class="container"> {/* Container div */}
 
         <div className="row">
-
           <div className="col">
             <Header />
           </div>
-
         </div>
 
         <div className="row">
+
           <div className="col-md-6 col-sm-12 col-xs-12">
             <div className="row">
-              <AddToDoItems addTaskFunction={this.addTask} />
+              <AddItineraryItem />
+            </div>
 
-            </div>
-            <div>
-              {
-                this.state.tasks.map(function (item, index) {
-                  return <TaskDisplay taskDescription={item} key={index} />
-                })
-              }
-            </div>
             <div className="row">
-              <TaskCounter taskCount={this.state.tasks.length} />
+              <p>Task Counter:</p>
+              <ItineraryTally />
             </div>
+
+
+            <div className="row">
+              <p>Itinerary List:</p>
+              <ItineraryList />
+            </div>
+
           </div>
 
           <div className="col-md-5 col-sm-12 col-xs-12">

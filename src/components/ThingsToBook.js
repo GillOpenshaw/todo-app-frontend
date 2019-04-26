@@ -3,11 +3,15 @@ import VirginTrain from "./VirginTrain.jpg";
 import LondonBus from "./LondonBus.jpg";
 
 class ThingsToBook extends Component {
+
     render() {
         return (
             <div>
+
                 <p><h4 className="text-center bg-primary text-white">Explore ideas for your trip</h4></p>
+
                 <table class="table table-bordered table-sm">
+
                     <tbody>
                         <tr>
                             <td><h5 className="text-center font-weight-bold text-primary">Travel</h5></td>
@@ -52,7 +56,9 @@ class ThingsToBook extends Component {
                             <td className="text-center">Pic of Camden Market</td>
                         </tr>
                     </tbody>
+
                 </table>
+
             </div>
         );
     }

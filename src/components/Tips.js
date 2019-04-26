@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
 class Tips extends Component {
+
     render() {
         return (
             <div>
+
                 <div>
                     <h4 className="text-center bg-warning text-white">Top Tips!</h4>
                 </div>
@@ -19,6 +21,7 @@ class Tips extends Component {
                 <div>
                     <h6 className="text-center bg-info text-white">Get discounted London travel, attraction entry and food with a Family Railcard</h6>
                 </div>
+
             </div>
         );
     }
