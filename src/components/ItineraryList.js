@@ -5,19 +5,21 @@ class ItineraryList extends Component {
     render() {
 
         return (
+
             <div className="row">
 
                 <div>
                     {this.props.taskDescription}
                 </div>
-                <div>
+                <div >
                     <button type="button">Done</button>
                 </div>
                 <div>
                     <button type="button">Delete</button>
                 </div>
 
-            </div >
+            </div>
+
         );
     }
 }

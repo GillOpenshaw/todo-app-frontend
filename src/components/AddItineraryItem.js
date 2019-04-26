@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-class AddToDoItems extends Component {
+class AddItineraryItem extends Component {
 
-  State = {
+  state = {
     taskDescription: ""
   }
 
@@ -30,4 +30,4 @@ class AddToDoItems extends Component {
   }
 }
 
-export default AddToDoItems;
+export default AddItineraryItem;

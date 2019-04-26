@@ -9,9 +9,9 @@ import Tips from "./components/Tips"
 
 class App extends Component {
 
-  state = {
-    tasks: []
-  }
+state = {
+      tasks: []
+    }
 
   addTask = (taskDescription) => {
     let currentTasks = this.state.tasks;

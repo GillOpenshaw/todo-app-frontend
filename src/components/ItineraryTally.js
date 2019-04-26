@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TaskCounter extends Component {
+class ItineraryTally extends Component {
 
     render() {
 
@@ -12,4 +12,4 @@ class TaskCounter extends Component {
     }
 }
 
-export default TaskCounter;
+export default ItineraryTally;
