@@ -9,18 +9,23 @@ import Tips from "./components/Tips"
 
 class App extends Component {
 
+  state = {
+    tasks: []
+  }
+
+  addTask = (taskDescription) => {
+    let currentTasks = this.state.tasks;
+    currentTasks.push(taskDescription);
+    this.setState({
+      tasks: currentTasks
+    })
+  }
+
+
   render() {
 
-    const tasks = [
-      "Buy train tickets",
-      "Book hotel",
-      "Buy theatre tickets",
-      "Book restaurant",
-      "Book Walking Tour"
-    ]
-
     return (
-      <div class="container"> {/* Container div */}
+      <div class="container">
 
         <div className="row">
           <div className="col">
@@ -32,22 +37,18 @@ class App extends Component {
 
           <div className="col-md-6 col-sm-12 col-xs-12">
             <div className="row">
-              <AddItineraryItem />
+              <AddItineraryItem addTaskFunction={this.addTask} />
             </div>
 
             <div className="row">
               <p>Task Counter:</p>
-              <ItineraryTally />
-            </div>
-
-            <div className="row">
-              <ItineraryList />
+              <ItineraryTally taskCount={this.state.tasks.length} />
             </div>
 
             <div className="row">
               <div className="col">
                 {
-                  tasks.map(function (item, index) {
+                  this.state.tasks.map(function (item, index) {
                     return <ItineraryList taskDescription={item} key=
                       {index} />
                   })

@@ -6,7 +6,7 @@ class TaskCounter extends Component {
 
         return (
             <div>
-                <p>You have 5 tasks remaining</p>
+                <p>You have {this.props.taskCount} items in your itinerary</p>
             </div>
         );
     }

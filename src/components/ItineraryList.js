@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TaskDisplay extends Component {
+class ItineraryList extends Component {
 
     render() {
 
@@ -22,4 +22,4 @@ class TaskDisplay extends Component {
     }
 }
 
-export default TaskDisplay;
+export default ItineraryList;
