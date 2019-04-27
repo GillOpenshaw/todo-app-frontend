@@ -9,9 +9,9 @@ import Tips from "./components/Tips"
 
 class App extends Component {
 
-state = {
-      tasks: []
-    }
+  state = {
+    tasks: []
+  }
 
   addTask = (taskDescription) => {
     let currentTasks = this.state.tasks;
@@ -47,11 +47,10 @@ state = {
             <div className="row">
               <div className="col">
                 {
-                  this.state.tasks.map( (item, index) => {
+                  this.state.tasks.map((item, index) => {
                     return <ItineraryList taskDescription={item} key=
                       {index} addTask={this.addTask} />
                   })
-
                 }
               </div>
             </div>
