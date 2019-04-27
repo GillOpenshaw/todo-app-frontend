@@ -41,17 +41,17 @@ state = {
             </div>
 
             <div className="row">
-              <p>Task Counter:</p>
               <ItineraryTally taskCount={this.state.tasks.length} />
             </div>
 
             <div className="row">
               <div className="col">
                 {
-                  this.state.tasks.map(function (item, index) {
+                  this.state.tasks.map( (item, index) => {
                     return <ItineraryList taskDescription={item} key=
-                      {index} />
+                      {index} addTask={this.addTask} />
                   })
+
                 }
               </div>
             </div>

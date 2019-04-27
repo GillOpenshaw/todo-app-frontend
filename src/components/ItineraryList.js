@@ -11,7 +11,7 @@ class ItineraryList extends Component {
                 <div>
                     {this.props.taskDescription}
                 </div>
-                <div >
+                <div>
                     <button type="button">Done</button>
                 </div>
                 <div>
