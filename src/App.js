@@ -23,7 +23,7 @@ class App extends Component {
 
   deleteTask = (index) => {
     let updatedTasks = this.state.tasks;
-    updatedTasks.splice(index, 1);
+    updatedTasks.slice(index, index+1);
     this.setState({
       tasks: updatedTasks
     })
