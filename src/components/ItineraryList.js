@@ -2,6 +2,11 @@ import React, { Component } from "react";
 
 class ItineraryList extends Component {
 
+    deleteTaskClicked = (item, index ) => {
+        alert("You have pressed the Delete button");
+      }
+    
+
     render() {
 
         return (
@@ -15,7 +20,8 @@ class ItineraryList extends Component {
                     <button type="button">Done</button>
                 </div>
                 <div>
-                    <button type="button">Delete</button>
+                    <button type="button" onClick={this.deleteTaskClicked}
+                    >Delete</button>
                 </div>
 
             </div>

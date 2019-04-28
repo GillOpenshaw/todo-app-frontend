@@ -21,59 +21,60 @@ class App extends Component {
     })
   }
 
+    render() {
 
-  render() {
+      return (
+        <div class="container">
 
-    return (
-      <div class="container">
-
-        <div className="row">
-          <div className="col">
-            <Header />
+          <div className="row">
+            <div className="col">
+              <Header />
+            </div>
           </div>
-        </div>
 
-        <div className="row">
+          <div className="row">
 
-          <div className="col-md-6 col-sm-12 col-xs-12">
-            <div className="row">
-              <AddItineraryItem addTaskFunction={this.addTask} />
+            <div className="col-md-6 col-sm-12 col-xs-12">
+              <div className="row">
+                <AddItineraryItem
+                  addTaskFunction={this.addTask} />
+              </div>
+
+              <div className="row">
+                <ItineraryTally taskCount={this.state.tasks.length} />
+              </div>
+
+              <div className="row">
+                <div className="col">
+                  {
+                    this.state.tasks.map((item, index) => {
+                      return <ItineraryList taskDescription={item} key={index}
+                        addTask={this.addTask} />
+                    })
+                  }
+
+                </div>
+              </div>
+
             </div>
 
-            <div className="row">
-              <ItineraryTally taskCount={this.state.tasks.length} />
+            <div className="col-md-5 col-sm-12 col-xs-12">
+              <div className="row margin" >
+                <ThingsToBook />
+              </div>
             </div>
 
-            <div className="row">
-              <div className="col">
-                {
-                  this.state.tasks.map((item, index) => {
-                    return <ItineraryList taskDescription={item} key=
-                      {index} addTask={this.addTask} />
-                  })
-                }
+            <div className="col-md-1 col-sm-12 col-xs-12" >
+              <div className="row margin">
+                <Tips />
               </div>
             </div>
 
           </div>
 
-          <div className="col-md-5 col-sm-12 col-xs-12">
-            <div className="row margin" >
-              <ThingsToBook />
-            </div>
-          </div>
-
-          <div className="col-md-1 col-sm-12 col-xs-12" >
-            <div className="row margin">
-              <Tips />
-            </div>
-          </div>
-
         </div>
-
-      </div>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
