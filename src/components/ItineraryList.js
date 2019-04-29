@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-class ItineraryList extends Component {
+class ItineraryList extends Component {  
 
-    deleteTaskClicked = (index ) => {
-        this.props.deleteTaskFunction(this.state.taskDescription(index));
+    deleteTaskClicked = () => {
+        this.props.deleteTaskFunction(this.props.index);
       }
-    
+
     render() {
 
         return (

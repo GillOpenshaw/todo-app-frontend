@@ -23,7 +23,7 @@ class App extends Component {
 
   deleteTask = (index) => {
     let updatedTasks = this.state.tasks;
-    updatedTasks.slice(index, index+1);
+    updatedTasks.splice(index, 1);
     this.setState({
       tasks: updatedTasks
     })
@@ -45,7 +45,8 @@ class App extends Component {
           <div className="col-md-6 col-sm-12 col-xs-12">
             <div className="row">
               <AddItineraryItem
-                addTaskFunction={this.addTask} deleteTaskFunction={this.deleteTask}/>
+                addTaskFunction={this.addTask}
+                deleteTaskFunction={this.deleteTask}/>
             </div>
 
             <div className="row">
@@ -56,8 +57,10 @@ class App extends Component {
               <div className="col">
                 {
                   this.state.tasks.map((item, index) => {
-                    return <ItineraryList taskDescription={item} key={index}
-                      addTask={this.addTask} deleteTask={this.deleteTask} />
+                    return <ItineraryList
+                      taskDescription={item} key={index}
+                      addTask={this.addTask.bind(this)}
+                      deleteTask={this.deleteTask.bind(this, index)} />
                   })
                 }
 
