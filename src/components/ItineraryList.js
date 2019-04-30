@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 
-class ItineraryList extends Component {  
+class ItineraryList extends Component {
 
-    state = {
-        taskDescription: ""
-      }
-
-    deleteTaskClicked = (index) => {
-        this.props.deleteTaskFunction(this.props.taskDescription);
-      }
+    deleteTaskClicked = () => {
+        this.props.deleteTaskFunction(this.props.index);
+    }
 
     render() {
 
@@ -25,10 +21,9 @@ class ItineraryList extends Component {
                 <div>
                     <button type="button" onClick={this.deleteTaskClicked}
                     >Delete</button>
+
                 </div>
-
             </div>
-
         );
     }
 }

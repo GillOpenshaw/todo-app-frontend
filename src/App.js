@@ -42,15 +42,11 @@ class App extends Component {
 
         <div className="row">
 
-          <div className="col-md-6 col-sm-12 col-xs-12">
+          <div className="col-md-5 col-sm-12 col-xs-12">
             <div className="row">
               <AddItineraryItem
                 addTaskFunction={this.addTask}
-                deleteTaskFunction={this.deleteTask}/>
-            </div>
-
-            <div className="row">
-              <ItineraryTally taskCount={this.state.tasks.length} />
+                deleteTaskFunction={this.deleteTask} />
             </div>
 
             <div className="row">
@@ -60,16 +56,20 @@ class App extends Component {
                     return <ItineraryList
                       taskDescription={item} key={index}
                       addTask={this.addTask.bind(this)}
-                      deleteTask={this.deleteTask.bind(this, index)} />
+                      deleteTask={this.deleteTask.bind(this)} />
                   })
                 }
 
               </div>
             </div>
 
+            <div className="row">
+              <ItineraryTally taskCount={this.state.tasks.length} />
+            </div>
+
           </div>
 
-          <div className="col-md-5 col-sm-12 col-xs-12">
+          <div className="col-md-6 col-sm-12 col-xs-12">
             <div className="row margin" >
               <ThingsToBook />
             </div>

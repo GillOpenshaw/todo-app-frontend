@@ -21,15 +21,18 @@ class AddItineraryItem extends Component {
       <div>
 
         <div>
-          <h4 className="text-center bg-primary text-white">Build your itinerary here:</h4>
+          <h4 className="text-center bg-primary text-white">Build Your itinerary Here:</h4>
           <form>
-            <label className="font-weight-bold">Add a new travel task:</label>
+            <label className="font-weight-bold">Add a new task:</label>
             <input type="text" onChange={this.inputBoxChanged} />
             <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add Task</button>
           </form>
         </div>
+        <div>
+          <h6>Date  Task   Done   Delete</h6>
+        </div>
 
-        
+
 
       </div>
     );
