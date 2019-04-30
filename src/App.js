@@ -54,9 +54,9 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryList
-                      taskDescription={item} key={index}
+                      taskDescription={item} key={index} index={index}
                       addTask={this.addTask.bind(this)}
-                      deleteTask={this.deleteTask.bind(this)} />
+                      deleteTaskFunction={this.deleteTask.bind(this)} />
                   })
                 }
 
