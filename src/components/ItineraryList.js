@@ -2,8 +2,12 @@ import React, { Component } from "react";
 
 class ItineraryList extends Component {  
 
-    deleteTaskClicked = () => {
-        this.props.deleteTaskFunction(this.props.index);
+    state = {
+        taskDescription: ""
+      }
+
+    deleteTaskClicked = (index) => {
+        this.props.deleteTaskFunction(this.props.taskDescription);
       }
 
     render() {
