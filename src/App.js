@@ -10,7 +10,8 @@ import Tips from "./components/Tips"
 class App extends Component {
 
   state = {
-    tasks: []
+    tasks: [],
+    month: []
   }
 
   addTask = (taskDescription) => {
@@ -26,6 +27,14 @@ class App extends Component {
     updatedTasks.splice(index, 1);
     this.setState({
       tasks: updatedTasks
+    })
+  }
+
+  addMonth = (taskMonth) => {
+    let currentMonth = this.state.month;
+    currentMonth.push(taskMonth);
+    this.setState({
+      month: currentMonth
     })
   }
 
@@ -45,6 +54,7 @@ class App extends Component {
           <div className="col-md-5 col-sm-12 col-xs-12">
             <div className="row">
               <AddItineraryItem
+                addMonthFunction={this.addMonth}
                 addTaskFunction={this.addTask}
                 deleteTaskFunction={this.deleteTask} />
             </div>
@@ -54,6 +64,7 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryList
+                      addMonth={this.addMonth.bind(this)}
                       taskDescription={item} key={index} index={index}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)} />

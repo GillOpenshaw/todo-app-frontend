@@ -15,7 +15,7 @@ class ThingsToBook extends Component {
         return (
             <div>
 
-                <p><h4 className="text-center text-color=#000099">Explore ideas for your trip</h4></p>
+                <p><h4 className="text-center text-danger">Explore Ideas For Your Trip</h4></p>
 
                 <table class="table table-sm">
 
@@ -23,7 +23,7 @@ class ThingsToBook extends Component {
                         <tr>
                             <td><h5 className="text-center font-weight-bold text-primary">Travel To London</h5></td>
                             <td><h5 className="text-center font-weight-bold text-primary">Travel Around London</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Accommodation Deals</h5></td>
+                            <td><h5 className="text-center font-weight-bold text-primary">Hotel and B&B Deals</h5></td>
                         </tr>
                         <tr>
                             <td className="text-center"><h6> <img src={VirginTrain} alt="Virgin Train" /> </h6></td>

@@ -13,6 +13,7 @@ class ItineraryList extends Component {
             <div className="row">
 
                 <div>
+                    {this.props.taskMonth}
                     {this.props.taskDescription}
                 </div>
                 <div>
