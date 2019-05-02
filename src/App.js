@@ -12,15 +12,15 @@ class App extends Component {
 
   state = {
     tasks: [
-      {task:"Book theatre", completed: false, id: uuid()},
-      {task:"Buy train ticket", completed: false, id:uuid()},
-      {task:"Book hotel room", completed: false, id:uuid()}
+      { month: "August", task: "Book theatre", done: false, id: uuid() },
+      { month: "August", task: "Buy train ticket", done: true, id: uuid() },
+      { month: "August", task: "Book hotel room", done: false, id: uuid() }
     ]
   }
 
-  addTask = (taskDescription) => {
+  addTask = (taskDescription, taskMonth) => {
     const currentTasks = this.state.tasks;
-    const newObject = {task:taskDescription, completed: false, id: uuid()}
+    const newObject = { task: taskDescription, done: false, id: uuid(), month: taskMonth }
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
@@ -35,11 +35,15 @@ class App extends Component {
     })
   }
 
-  addMonth = (taskMonth) => {
-    let currentMonth = this.state.month;
-    currentMonth.push(taskMonth);
+  doneTask = index => {
+    const completedTasks = this.state.tasks.map((item) => {
+      if (item.index === index) {
+        item.done = true;
+      }
+      return item
+    });
     this.setState({
-      month: currentMonth
+      tasks: completedTasks
     })
   }
 
@@ -68,10 +72,11 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryList
-                      taskDescription={item.task} key={index} index={index}
-                      addMonth={this.addMonth.bind(this)}
+                      taskDescription={item.task} key={index} index={index} itemCompleted={item.done} itemMonth={item.month}
                       addTask={this.addTask.bind(this)}
-                      deleteTaskFunction={this.deleteTask.bind(this)} />
+                      deleteTaskFunction={this.deleteTask.bind(this)}
+                      doneTaskFunction={this.doneTask.bind(this)}
+                    />
                   })
                 }
 

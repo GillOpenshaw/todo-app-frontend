@@ -3,12 +3,14 @@ import React, { Component } from "react";
 class AddItineraryItem extends Component {
 
   state = {
-    taskDescription: ""
+    taskDescription: "",
+    taskMonth:"",
+
   }
 
   addTaskClicked = e => {
     e.preventDefault();
-    this.props.addTaskFunction(this.state.taskDescription);
+    this.props.addTaskFunction(this.state.taskDescription, this.state.taskMonth);
   }
 
   taskInputBoxChanged = (event) => {
