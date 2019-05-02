@@ -6,6 +6,10 @@ class ItineraryList extends Component {
         this.props.deleteTaskFunction(this.props.index);
     }
 
+    doneTaskClicked = () => {
+        this.props.doneTaskFunction(this.state.taskDescription);
+    }
+
     render() {
 
         return (
@@ -16,9 +20,7 @@ class ItineraryList extends Component {
                     {this.props.taskMonth}
                     {this.props.taskDescription}
                 </div>
-                <div>
-                    <button type="button">Done</button>
-                </div>
+                
                 <div>
                     <button type="button" onClick={this.deleteTaskClicked}
                     >Delete</button>

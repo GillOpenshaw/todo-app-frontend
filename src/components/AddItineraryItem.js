@@ -15,8 +15,12 @@ class AddItineraryItem extends Component {
     this.setState({ taskDescription: event.target.value });
   }
 
+  tripNameInputBox = (event) => {
+    this.setState( {taskDescription: event.target.value});
+  }
+
   taskMonthSelected = (event) => {
-    this.setState({ taskMonth: event.target.value});
+    this.setState({ taskMonth: event.target.value });
   }
 
   render() {
@@ -101,7 +105,7 @@ class AddItineraryItem extends Component {
         </div>
 
         <div>
-          <h6>Date  Task   Price   Book  Done   Delete</h6>
+          <h6>Date Task Price Book Done Delete</h6>
         </div>
 
       </div>

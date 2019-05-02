@@ -2,21 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from "./components/Header";
 import AddItineraryItem from "./components/AddItineraryItem";
-import ItineraryList from "./components/ItineraryList"
-import ItineraryTally from "./components/ItineraryTally"
-import ThingsToBook from "./components/ThingsToBook"
-import Tips from "./components/Tips"
+import ItineraryList from "./components/ItineraryList";
+import ItineraryTally from "./components/ItineraryTally";
+import ThingsToBook from "./components/ThingsToBook";
+import Tips from "./components/Tips";
+import uuid from "uuid/v4";
 
 class App extends Component {
 
   state = {
-    tasks: [],
-    month: []
+    tasks: [
+      {task:"Book theatre", completed: false, id: uuid()},
+      {task:"Buy train ticket", completed: false, id:uuid()},
+      {task:"Book hotel room", completed: false, id:uuid()}
+    ]
   }
 
   addTask = (taskDescription) => {
-    let currentTasks = this.state.tasks;
-    currentTasks.push(taskDescription);
+    const currentTasks = this.state.tasks;
+    const newObject = {task:taskDescription, completed: false, id: uuid()}
+    currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
     })
@@ -55,8 +60,7 @@ class App extends Component {
             <div className="row">
               <AddItineraryItem
                 addMonthFunction={this.addMonth}
-                addTaskFunction={this.addTask}
-                deleteTaskFunction={this.deleteTask} />
+                addTaskFunction={this.addTask} />
             </div>
 
             <div className="row">
@@ -64,8 +68,8 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryList
+                      taskDescription={item.task} key={index} index={index}
                       addMonth={this.addMonth.bind(this)}
-                      taskDescription={item} key={index} index={index}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)} />
                   })

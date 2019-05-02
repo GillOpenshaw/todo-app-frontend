@@ -21,9 +21,9 @@ class ThingsToBook extends Component {
 
                     <tbody>
                         <tr>
-                            <td><h5 className="text-center font-weight-bold text-primary">Travel To London</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Travel Around London</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Hotel and B&B Deals</h5></td>
+                            <td><h5 className="booking-text">Travel To London</h5></td>
+                            <td><h5 className="booking-text">Travel Around London</h5></td>
+                            <td><h5 className="booking-text">Hotel and B&B Deals</h5></td>
                         </tr>
                         <tr>
                             <td className="text-center"><h6> <img src={VirginTrain} alt="Virgin Train" /> </h6></td>
@@ -34,9 +34,9 @@ class ThingsToBook extends Component {
                             <tr><p></p></tr>
                         </tr>
                         <tr>
-                            <td><h5 className="text-center font-weight-bold text-primary">Kids Week Tickets</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Discounted Theatre Tickets</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Food, Drink and Ice Cream</h5></td>
+                            <td><h5 className="booking-text">Kids Week Tickets</h5></td>
+                            <td><h5 className="booking-text">Discounted Theatre Tickets</h5></td>
+                            <td><h5 className="booking-text">Food, Drink and Ice Cream</h5></td>
                         </tr>
                         <tr>
                             <td className="text-center"><img src={KidsWeek} alt="Kids Week theatre" /></td>
@@ -47,9 +47,9 @@ class ThingsToBook extends Component {
                             <tr><p></p></tr>
                         </tr>
                         <tr>
-                            <td><h5 className="text-center font-weight-bold text-primary">London Sightseeing</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Attractions and Walking Tours</h5></td>
-                            <td><h5 className="text-center font-weight-bold text-primary">Shopping and Markets</h5></td>
+                            <td><h5 className="booking-text">London Sightseeing</h5></td>
+                            <td><h5 className="booking-text">Attractions and Walking Tours</h5></td>
+                            <td><h5 className="booking-text">Shopping and Markets</h5></td>
                         </tr>
                         <tr>
                             <td className="text-center"><img src={SkyGarden} alt="SkyGarden" /></td>
