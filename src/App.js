@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from "./components/Header";
 import AddItineraryItem from "./components/AddItineraryItem";
-import ItineraryList from "./components/ItineraryList";
+import ItineraryItem from "./components/ItineraryItem";
 import ItineraryTally from "./components/ItineraryTally";
 import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
@@ -12,15 +12,15 @@ class App extends Component {
 
   state = {
     tasks: [
-      { month: "August", task: "Book theatre", done: false, id: uuid() },
-      { month: "August", task: "Buy train ticket", done: true, id: uuid() },
-      { month: "August", task: "Book hotel room", done: false, id: uuid() }
+      { month: "August", day: 6, task: "Train to London", done: false, id: uuid() },
+      { month: "August", day: 6, task: "Hotel: Euston Travelodge", done: true, id: uuid() },
+      { month: "August", day: 7, task: "Theatre: Hamilton", done: false, id: uuid() }
     ]
   }
 
-  addTask = (taskDescription, taskMonth) => {
+  addTask = (taskDescription, taskMonth, taskDay) => {
     const currentTasks = this.state.tasks;
-    const newObject = { task: taskDescription, done: false, id: uuid(), month: taskMonth }
+    const newObject = { task: taskDescription, done: false, id: uuid(), month: taskMonth, day: taskDay }
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
@@ -63,7 +63,6 @@ class App extends Component {
           <div className="col-md-5 col-sm-12 col-xs-12">
             <div className="row">
               <AddItineraryItem
-                addMonthFunction={this.addMonth}
                 addTaskFunction={this.addTask} />
             </div>
 
@@ -71,8 +70,11 @@ class App extends Component {
               <div className="col">
                 {
                   this.state.tasks.map((item, index) => {
-                    return <ItineraryList
-                      taskDescription={item.task} key={index} index={index} itemCompleted={item.done} itemMonth={item.month}
+                    return <ItineraryItem
+                      taskDescription={item.task} key={index} index={index}
+                      taskMonth={item.month}
+                      taskDay={item.day}
+                      itemCompleted={item.done} itemMonth={item.month}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)}
                       doneTaskFunction={this.doneTask.bind(this)}

@@ -4,25 +4,29 @@ class AddItineraryItem extends Component {
 
   state = {
     taskDescription: "",
-    taskMonth:"",
-
+    taskMonth: "",
+    taskDay:""
   }
 
-  addTaskClicked = e => {
-    e.preventDefault();
-    this.props.addTaskFunction(this.state.taskDescription, this.state.taskMonth);
+  tripNameInputBox = (event) => {
+    this.setState({ taskDescription: event.target.value });
   }
 
   taskInputBoxChanged = (event) => {
     this.setState({ taskDescription: event.target.value });
   }
 
-  tripNameInputBox = (event) => {
-    this.setState( {taskDescription: event.target.value});
-  }
-
   taskMonthSelected = (event) => {
     this.setState({ taskMonth: event.target.value });
+  }
+
+  taskDaySelected = (event) => {
+    this.setState({ taskDay: event.target.value });
+  }
+
+  addTaskClicked = e => {
+    e.preventDefault();
+    this.props.addTaskFunction(this.state.taskDescription, this.state.taskMonth, this.state.taskDay);
   }
 
   render() {
@@ -50,7 +54,7 @@ class AddItineraryItem extends Component {
               <input className="col-2" type="number" onChange={this.taskPrice} />
 
               <select className="col-4 custom-select custom-select-sm">
-                <option selected onSelect={this.taskMonthSelected}>Month</option>
+                <option selected onChange={this.taskMonthSelected}>Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -66,7 +70,7 @@ class AddItineraryItem extends Component {
               </select>
 
               <select className=" col-4 custom-select custom-select-sm">
-                <option selected>Day</option>
+                <option selected onChange={this.taskDaySelected}>Day</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -100,7 +104,7 @@ class AddItineraryItem extends Component {
                 <option value="31">31</option>
               </select>
 
-              <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add Task</button>
+              <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add To Your Itinerary</button>
             </div>
 
           </form>
@@ -110,10 +114,24 @@ class AddItineraryItem extends Component {
           <h6>Date Task Price Book Done Delete</h6>
         </div>
 
+
+
+
+        <div className="row">
+
+          <div className="col-2">
+            <p>{this.props.taskMonth}</p>
+          </div>
+          <div className="col-6">
+            {this.props.itemCompleted ?
+              <p className="completed">{this.props.taskDescription}</p>
+              :
+              <p>{this.props.taskDescription}</p>
+            }
+          </div>
+
+        </div>
       </div>
-
-
-
 
     );
   }

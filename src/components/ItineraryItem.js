@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ItineraryList extends Component {
+class ItineraryItem extends Component {
 
     deleteTaskClicked = () => {
         this.props.deleteTaskFunction(this.props.index);
@@ -10,15 +10,20 @@ class ItineraryList extends Component {
         this.props.doneTaskFunction(this.props.index);
     }
 
-    render() {
+    render() { 
 
         return (
 
             <div className="row">
 
-                <div className="col-6">
+                <div className="col-2">
                     {this.props.taskMonth}
+                </div>
 
+                <div className="col-1">
+                    {this.props.taskDay}
+                </div>
+                <div className="col-5">
                     {this.props.itemCompleted ?
                         <p className="completed">{this.props.taskDescription}</p>
                         :
@@ -27,11 +32,11 @@ class ItineraryList extends Component {
                 </div>
 
 
-                <div className="col-3">
+                <div className="col-2">
                     <button type="button" onClick={this.doneTaskClicked}
                     >Done?</button>
                 </div>
-                <div className="col-3">
+                <div className="col-2">
                     <button type="button" onClick={this.deleteTaskClicked}
                     >Delete</button>
                 </div>
@@ -40,4 +45,4 @@ class ItineraryList extends Component {
     }
 }
 
-export default ItineraryList;
+export default ItineraryItem;
