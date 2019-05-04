@@ -16,14 +16,14 @@ class ItineraryItem extends Component {
 
             <div className="row">
 
-                <div className="col-2">
+                <div className="col-1">
                     {this.props.taskMonth}
                 </div>
 
                 <div className="col-1">
                     {this.props.taskDay}
                 </div>
-                <div className="col-5">
+                <div className="col-6">
                     {this.props.itemCompleted ?
                         <p className="completed">{this.props.taskDescription}</p>
                         :

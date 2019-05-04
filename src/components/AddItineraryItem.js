@@ -5,7 +5,7 @@ class AddItineraryItem extends Component {
   state = {
     taskDescription: "",
     taskMonth: "",
-    taskDay:""
+    taskDay: ""
   }
 
   tripNameInputBox = (event) => {
@@ -35,7 +35,7 @@ class AddItineraryItem extends Component {
       <div>
 
         <div>
-          <h4 className="text-center bg-primary text-white">Build Your itinerary Here:</h4>
+          <h4 className="text-center bg-primary text-white">Build Your Itinerary Here:</h4>
           <form>
 
             <label className="col-4 font-weight-bold">Trip Name:</label>
@@ -51,10 +51,10 @@ class AddItineraryItem extends Component {
 
             <div>
               <label className="col-2 font-weight-bold">Price:</label>
-              <input className="col-2" type="number" onChange={this.taskPrice} />
+              <input className="col-3" type="number" onChange={this.taskPrice} />
 
-              <select className="col-4 custom-select custom-select-sm">
-                <option selected onChange={this.taskMonthSelected}>Month</option>
+              <select className="col-4 custom-select custom-select-sm" onChange={this.taskMonthSelected}>
+                <option selected>Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -69,8 +69,8 @@ class AddItineraryItem extends Component {
                 <option value="12">December</option>
               </select>
 
-              <select className=" col-4 custom-select custom-select-sm">
-                <option selected onChange={this.taskDaySelected}>Day</option>
+              <select className=" col-3 custom-select custom-select-sm" onChange={this.taskDaySelected}>
+                <option selected>Day</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

@@ -12,9 +12,9 @@ class App extends Component {
 
   state = {
     tasks: [
-      { month: "August", day: 6, task: "Train to London", done: false, id: uuid() },
-      { month: "August", day: 6, task: "Hotel: Euston Travelodge", done: true, id: uuid() },
-      { month: "August", day: 7, task: "Theatre: Hamilton", done: false, id: uuid() }
+      { month: "8", day: 6, task: "Train to London", done: false, id: uuid() },
+      { month: "8", day: 6, task: "Hotel: Euston Travelodge", done: true, id: uuid() },
+      { month: "8", day: 7, task: "Theatre: Hamilton", done: false, id: uuid() }
     ]
   }
 
