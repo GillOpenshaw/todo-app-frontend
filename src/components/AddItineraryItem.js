@@ -34,7 +34,8 @@ class AddItineraryItem extends Component {
   addTaskClicked = e => {
     e.preventDefault();
     const newDate = moment(this.state.taskDate);
-    this.props.addTaskFunction(this.state.taskDescription, newDate, this.state.newPrice);
+    const newPrice= this.state.taskPrice
+    this.props.addTaskFunction(this.state.taskDescription, newDate, newPrice);
 
   }
 
@@ -63,7 +64,7 @@ class AddItineraryItem extends Component {
               <input className="col-4" id="dateInput" type="date" onChange={this.taskDateSelected} value={this.state.taskDate} />
 
               <label className="col-3 font-weight-bold">Price:</label>
-              <input className="col-3" type="number" onChange={this.taskPriceSelected} />
+              <input className="col-3" type="number" onChange={this.taskPriceSelected} value={this.state.taskPrice}/>
 
 
               <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add To Your Itinerary</button>
