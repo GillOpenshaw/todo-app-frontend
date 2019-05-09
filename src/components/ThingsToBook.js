@@ -17,7 +17,7 @@ class ThingsToBook extends Component {
 
                 <p><h4 className="text-center text-danger">Explore Ideas For Your Trip</h4></p>
 
-                <table class="table table-sm">
+                <table className="table table-sm">
 
                     <tbody>
                         <tr>

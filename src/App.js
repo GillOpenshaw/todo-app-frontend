@@ -7,20 +7,21 @@ import ItineraryTally from "./components/ItineraryTally";
 import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
 import uuid from "uuid/v4";
+import moment from 'moment';
 
 class App extends Component {
 
   state = {
     tasks: [
-      { month: "8", day: 6, task: "Train to London", done: false, id: uuid() },
-      { month: "8", day: 6, task: "Hotel: Euston Travelodge", done: true, id: uuid() },
-      { month: "8", day: 7, task: "Theatre: Hamilton", done: false, id: uuid() }
+      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Train to London", done: false, id: uuid() },
+      { date: moment("04-08-2019","DD-MM-YYYY"), task: "Hotel: Euston Travelodge", done: true, id: uuid() },
+      { date: moment("05-08-2019","DD-MM-YYYY"), task: "Theatre: Hamilton", done: false, id: uuid() }
     ]
   }
 
-  addTask = (taskDescription, taskMonth, taskDay) => {
+  addTask = (taskDescription, taskDate) => {
     const currentTasks = this.state.tasks;
-    const newObject = { task: taskDescription, done: false, id: uuid(), month: taskMonth, day: taskDay }
+    const newObject = { task: taskDescription, done: false, id: uuid(), date: taskDate }
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
@@ -50,7 +51,7 @@ class App extends Component {
   render() {
 
     return (
-      <div class="container">
+      <div className="container">
 
         <div className="row">
           <div className="col">
@@ -72,9 +73,8 @@ class App extends Component {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryItem
                       taskDescription={item.task} key={index} index={index}
-                      taskMonth={item.month}
-                      taskDay={item.day}
-                      itemCompleted={item.done} itemMonth={item.month}
+                      taskDate={item.date}
+                      itemCompleted={item.done}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)}
                       doneTaskFunction={this.doneTask.bind(this)}

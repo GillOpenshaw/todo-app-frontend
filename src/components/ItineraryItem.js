@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 
 class ItineraryItem extends Component {
 
@@ -16,14 +17,11 @@ class ItineraryItem extends Component {
 
             <div className="row">
 
-                <div className="col-1">
-                    {this.props.taskMonth}
+                <div className="col-3">
+                    {this.props.taskDate.format("Do-MMMM-YYYY")}
                 </div>
 
-                <div className="col-1">
-                    {this.props.taskDay}
-                </div>
-                <div className="col-6">
+                <div className="col-5">
                     {this.props.itemCompleted ?
                         <p className="completed">{this.props.taskDescription}</p>
                         :
