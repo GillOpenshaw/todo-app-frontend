@@ -10,7 +10,7 @@ class ItineraryItem extends Component {
         this.props.doneTaskFunction(this.props.index);
     }
 
-    render() { 
+    render() {
 
         return (
 
@@ -19,7 +19,9 @@ class ItineraryItem extends Component {
                 <div className="col-3">
                     {this.props.taskDate.format("Do-MMMM-YYYY")}
                 </div>
-
+                <div className="col-2">
+                    <p>{this.props.taskPrice}</p>
+                </div>
                 <div className="col-5">
                     {this.props.itemCompleted ?
                         <p className="completed">{this.props.taskDescription}</p>
@@ -29,11 +31,11 @@ class ItineraryItem extends Component {
                 </div>
 
 
-                <div className="col-2">
+                <div className="col-1">
                     <button type="button" onClick={this.doneTaskClicked}
                     >Done?</button>
                 </div>
-                <div className="col-2">
+                <div className="col-1">
                     <button type="button" onClick={this.deleteTaskClicked}
                     >Delete</button>
                 </div>

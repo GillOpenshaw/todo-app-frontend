@@ -5,7 +5,8 @@ class AddItineraryItem extends Component {
 
   state = {
     taskDescription: "",
-    taskDate: ""
+    taskDate: "",
+    taskPrice: ""
   }
 
   tripNameInputBox = (event) => {
@@ -23,10 +24,17 @@ class AddItineraryItem extends Component {
     });
   }
 
+  taskPriceSelected = (event) => {
+    const taskPrice = event.target.value;
+    this.setState({
+      taskPrice: taskPrice
+    });
+  }
+
   addTaskClicked = e => {
     e.preventDefault();
     const newDate = moment(this.state.taskDate);
-    this.props.addTaskFunction(this.state.taskDescription, newDate);
+    this.props.addTaskFunction(this.state.taskDescription, newDate, this.state.newPrice);
 
   }
 
@@ -51,11 +59,11 @@ class AddItineraryItem extends Component {
             <input className="col-10" type="text" onChange={this.taskInputBoxChanged} />
 
             <div>
-              <label htmlFor="dateInput" className="col-3 font-weight-bold">Date:</label>
-              <input className="col-3" id="dateInput" type="date" onChange={this.taskDateSelected} value={this.state.taskDate} />
+              <label htmlFor="dateInput" className="col-2 font-weight-bold">Date:</label>
+              <input className="col-4" id="dateInput" type="date" onChange={this.taskDateSelected} value={this.state.taskDate} />
 
               <label className="col-3 font-weight-bold">Price:</label>
-              <input className="col-3" type="number" onChange={this.taskPrice} />
+              <input className="col-3" type="number" onChange={this.taskPriceSelected} />
 
 
               <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add To Your Itinerary</button>
@@ -75,6 +83,9 @@ class AddItineraryItem extends Component {
 
           <div className="col-2">
             <p>{this.props.taskDate}</p>
+          </div>
+          <div className="col-2">
+            <p>{this.props.taskPrice}</p>
           </div>
           <div className="col-6">
             {this.props.itemCompleted ?

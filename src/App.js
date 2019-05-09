@@ -13,15 +13,15 @@ class App extends Component {
 
   state = {
     tasks: [
-      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Train to London", done: false, id: uuid() },
-      { date: moment("04-08-2019","DD-MM-YYYY"), task: "Hotel: Euston Travelodge", done: true, id: uuid() },
-      { date: moment("05-08-2019","DD-MM-YYYY"), task: "Theatre: Hamilton", done: false, id: uuid() }
+      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Train to London", price: 60, done: false, id: uuid() },
+      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Hotel: Euston Travelodge", price: 85, done: true, id: uuid() },
+      { date: moment("05-08-2019", "DD-MM-YYYY"), task: "Theatre: Hamilton", price: 80, done: false, id: uuid() }
     ]
   }
 
-  addTask = (taskDescription, taskDate) => {
+  addTask = (taskDescription, taskDate, taskPrice) => {
     const currentTasks = this.state.tasks;
-    const newObject = { task: taskDescription, done: false, id: uuid(), date: taskDate }
+    const newObject = { task: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
@@ -74,6 +74,7 @@ class App extends Component {
                     return <ItineraryItem
                       taskDescription={item.task} key={index} index={index}
                       taskDate={item.date}
+                      taskPrice={item.price}
                       itemCompleted={item.done}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)}
