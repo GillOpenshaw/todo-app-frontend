@@ -14,30 +14,32 @@ class ItineraryItem extends Component {
     render() {
 
         return (
+            <div>
 
-            <div className="row">
+                <div className="row">
 
-                <div className="col-4">
-                    {this.props.taskDate.format("Do-MMMM-YYYY")}
-                </div>
+                    <div className="col-3">
+                        {this.props.taskDate.format("Do-MM-YY")}
+                    </div>
 
-                <div className="col-4">
-                    {this.props.itemCompleted ?
-                        <p className="completed">{this.props.taskDescription}</p>
-                        :
-                        <p>{this.props.taskDescription}</p>
-                    }
-                </div>
+                    <div className="col-5">
+                        {this.props.itemCompleted ?
+                            <p className="completed">{this.props.taskDescription}</p>
+                            :
+                            <p>{this.props.taskDescription}</p>
+                        }
+                    </div>
 
-                <div className="col-2">
-                    <p>{this.props.taskPrice}</p>
-                </div>
+                    <div className="col-2">
+                        <p>{this.props.taskPrice}</p>
+                    </div>
 
-                <div className="col-1">
-                    <button type="button" onClick={this.doneTaskClicked}> <i className="fas fa-check-circle donebutton"></i></button>
-                </div>
-                <div className="col-1">
-                    <button type="button" onClick={this.deleteTaskClicked}> <i className="fas fa-trash deletebutton"></i></button>
+                    <div className="col-1">
+                        <button type="button" onClick={this.doneTaskClicked}> <i className="far fa-calendar-check donebutton"></i></button>
+                    </div>
+                    <div className="col-1">
+                        <button type="button" onClick={this.deleteTaskClicked}> <i className="fas fa-trash deletebutton"></i></button>
+                    </div>
                 </div>
             </div>
         );

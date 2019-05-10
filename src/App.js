@@ -13,9 +13,9 @@ class App extends Component {
 
   state = {
     tasks: [
-      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Train to London", price: 60, done: false, id: uuid() },
-      { date: moment("04-08-2019", "DD-MM-YYYY"), task: "Hotel: Euston Travelodge", price: 85, done: true, id: uuid() },
-      { date: moment("05-08-2019", "DD-MM-YYYY"), task: "Theatre: Hamilton", price: 80, done: false, id: uuid() }
+      { date: moment("04-08-19", "DD-MM-YY"), task: "Train to London", price: 60, done: false, id: uuid() },
+      { date: moment("04-08-19", "DD-MM-YY"), task: "Hotel: Euston Travelodge", price: 85, done: true, id: uuid() },
+      { date: moment("05-08-19", "DD-MM-YY"), task: "Theatre: Hamilton", price: 80, done: false, id: uuid() }
     ]
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
   doneTask = index => {
     const completedTasks = this.state.tasks.map((item) => {
       if (item.index === index) {
-        item.done = true;
+        item.done = false;
       }
       return item
     });
