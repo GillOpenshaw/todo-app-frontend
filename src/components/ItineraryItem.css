@@ -8,10 +8,6 @@
     color: green
 }
 
-.iconfontsize {
-    font-size:14px
-}
-
-.poundsign {
-    font-size: 18px
-}
+.completed {
+    text-decoration: line-through;
+  }

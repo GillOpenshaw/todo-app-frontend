@@ -23,7 +23,7 @@ class ItineraryItem extends Component {
                     </div>
 
                     <div className="col-5">
-                        {this.props.itemCompleted ?
+                        {this.props.itemDone ?
                             <p className="completed">{this.props.taskDescription}</p>
                             :
                             <p>{this.props.taskDescription}</p>

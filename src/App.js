@@ -36,15 +36,15 @@ class App extends Component {
     })
   }
 
-  doneTask = index => {
-    const completedTasks = this.state.tasks.map((item) => {
-      if (item.index === index) {
-        item.done = false;
+  doneTask = (index) => {
+    let existingTasks = this.state.tasks;
+    for (let task of existingTasks) {
+      if (task.index === index) {
+        task.done = true;
       }
-      return item
-    });
+    };
     this.setState({
-      tasks: completedTasks
+      tasks: existingTasks
     })
   }
 
@@ -75,7 +75,7 @@ class App extends Component {
                       taskDescription={item.task} key={index} index={index}
                       taskDate={item.date}
                       taskPrice={item.price}
-                      itemCompleted={item.done}
+                      itemDone={item.done}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)}
                       doneTaskFunction={this.doneTask.bind(this)}

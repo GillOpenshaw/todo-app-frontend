@@ -1,21 +1,23 @@
 .poundsignsort {
-    font-size: 24px
+    font-size: 18px;
+    padding: 5px
 }
 
 .dateiconsort {
-    font-size: 24px
+    font-size: 18px;
+    padding: 5px
 }
 
 .dateicon {
-    font-size: 24px
+    font-size: 18px
 }
 
 .iconfontsize {
-    font-size:24px
+    font-size:18px
 }
 
 .poundsign {
-    font-size: 24px
+    font-size: 12px
 }
 
 .taskbutton {
