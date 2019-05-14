@@ -1,13 +1,13 @@
 .deletebutton {
-    font-size:18px;
-    color:red
+    font-size: 18px;
+    color: red
 }
 
 .donebutton {
-    font-size:18px;
+    font-size: 18px;
     color: green
 }
 
 .completed {
     text-decoration: line-through;
-  }
+}

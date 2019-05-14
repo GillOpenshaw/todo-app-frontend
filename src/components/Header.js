@@ -7,7 +7,7 @@ class Header extends Component {
 
         return (
             <div>
-                    <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1>
+                <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1>
             </div>
         );
     }
