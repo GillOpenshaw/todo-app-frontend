@@ -15,7 +15,7 @@ class ThingsToBook extends Component {
         return (
             <div>
 
-                <p><h4 className="text-center text-danger">Explore Ideas For Your Trip</h4></p>
+                <h4 className="text-center text-danger">Explore Ideas For Your Trip</h4>
 
                 <table className="table table-sm">
 

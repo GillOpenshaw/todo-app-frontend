@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import AddItineraryItem from "./components/AddItineraryItem";
 import ItineraryItem from "./components/ItineraryItem";
+import Budget from "./components/Budget";
 import ItineraryTally from "./components/ItineraryTally";
 import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
@@ -36,10 +37,10 @@ class App extends Component {
     })
   }
 
-  doneTask = (index) => {
+  doneTask = (id) => {
     let existingTasks = this.state.tasks;
     for (let task of existingTasks) {
-      if (task.index === index) {
+      if (task.id === id) {
         task.done = true;
       }
     };
@@ -72,7 +73,7 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryItem
-                      taskDescription={item.task} key={index} index={index}
+                      taskDescription={item.task} key={index} index={index} id={item.id}
                       taskDate={item.date}
                       taskPrice={item.price}
                       itemDone={item.done}
@@ -85,9 +86,17 @@ class App extends Component {
 
               </div>
             </div>
-
+            
             <div className="row">
               <ItineraryTally taskCount={this.state.tasks.length} />
+            </div>
+
+            <div className="row">
+              <div className="col">
+              
+              
+              <Budget/>
+              </div>
             </div>
 
           </div>

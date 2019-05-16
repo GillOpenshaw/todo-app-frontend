@@ -8,7 +8,7 @@ class ItineraryItem extends Component {
     }
 
     doneTaskClicked = () => {
-        this.props.doneTaskFunction(this.props.index);
+        this.props.doneTaskFunction(this.props.id);
     }
 
     render() {
