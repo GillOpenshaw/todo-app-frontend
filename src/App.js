@@ -49,7 +49,21 @@ class App extends Component {
     })
   }
 
+  calculateTotalSpend = () => {
+    let totalSpent = 0
+    this.state.tasks.forEach (task => {
+      console.log(task)
+      const taskPrice = task.price
+      console.log(taskPrice)
+      
+      totalSpent += taskPrice
+      
+    })
+    return(totalSpent)
+  }
+
   render() {
+    const totalSpent = this.calculateTotalSpend()
 
     return (
       <div className="container">
@@ -86,16 +100,16 @@ class App extends Component {
 
               </div>
             </div>
-            
+
             <div className="row">
               <ItineraryTally taskCount={this.state.tasks.length} />
             </div>
 
             <div className="row">
               <div className="col">
-              
-              
-              <Budget/>
+
+
+                <Budget spent={totalSpent} />
               </div>
             </div>
 
