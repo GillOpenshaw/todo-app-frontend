@@ -17,7 +17,7 @@ class Budget extends Component {
                     <h6>Budget Remaining</h6>
                 </div>
                 <div className="col 3">
-                    <h6>Integer</h6>
+                    <h6>{this.props.budgetRemaining}</h6>
                 </div>
 
             </div>

@@ -49,21 +49,24 @@ class App extends Component {
     })
   }
 
+calculateBudgetRemaining = () => {
+  let budgetRemaining = this.state.totalBudget - this.state.totalSpent
+  console.log(budgetRemaining)
+  return(budgetRemaining)
+}
+
   calculateTotalSpend = () => {
     let totalSpent = 0
     this.state.tasks.forEach (task => {
-      console.log(task)
       const taskPrice = task.price
-      console.log(taskPrice)
-      
       totalSpent += taskPrice
-      
     })
     return(totalSpent)
   }
 
   render() {
     const totalSpent = this.calculateTotalSpend()
+    const budgetLeft = this.calculateBudgetRemaining()
 
     return (
       <div className="container">
@@ -109,7 +112,7 @@ class App extends Component {
               <div className="col">
 
 
-                <Budget spent={totalSpent} />
+                <Budget spent={totalSpent} budgetRemaining={budgetLeft}/>
               </div>
             </div>
 
