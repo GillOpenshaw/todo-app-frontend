@@ -60,6 +60,7 @@ calculateBudgetRemaining = () => {
     this.state.tasks.forEach (task => {
       const taskPrice = task.price
       totalSpent += taskPrice
+      console.log(totalSpent)
     })
     return(totalSpent)
   }

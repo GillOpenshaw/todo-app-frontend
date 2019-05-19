@@ -12,7 +12,7 @@ class AddItineraryItem extends Component {
   }
 
   totalBudgetInputBox = (event) => {
-    const totalBudget = parseFloat(event.target.value);
+    const totalBudget = (event.target.value);
     console.log(totalBudget)
     this.setState({
       totalBudget: totalBudget
