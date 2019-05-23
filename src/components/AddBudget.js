@@ -3,14 +3,8 @@ import React, { Component } from "react";
 class AddBudget extends Component {
 
     totalBudgetInputBox = (event) => {
-        const totalBudget = (event.target.value);
-        console.log(totalBudget)
-        this.setState({
-            totalBudget: parseInt(totalBudget)
-            
-        });
-        console.log(typeof(totalBudget))
-    }
+        this.setState({ totalBudget: parseInt(event.target.value) });
+    };
 
     render() {
 

@@ -51,8 +51,8 @@ class App extends Component {
     })
   }
 
-  calculateBudgetRemaining = () => {
-    let budgetRemaining = this.state.totalBudget - this.state.totalSpent
+  calculateBudgetRemaining = (totalBudget) => {
+    let budgetRemaining = totalBudget - this.state.totalSpent
     console.log(typeof budgetRemaining)
     console.log(budgetRemaining)
     return (budgetRemaining)
