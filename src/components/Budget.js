@@ -2,6 +2,14 @@ import React, { Component } from "react";
 
 class Budget extends Component {
 
+    totalBudgetInputBox = (event) => {
+        const totalBudget = (event.target.value);
+        console.log(totalBudget)
+        this.setState({
+            totalBudget: totalBudget
+        });
+    }
+
     render() {
 
         return (

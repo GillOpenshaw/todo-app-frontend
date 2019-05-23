@@ -31,7 +31,7 @@ class ThingsToBook extends Component {
                             <td className="text-center"><h6> <img src={HotelPremierInn} alt="Premier Inn Hotel" /> </h6></td>    
                         </tr>
                         <tr>
-                            <tr><p></p></tr>
+                        
                         </tr>
                         <tr>
                             <td><h5 className="booking-text">Kids Week Tickets</h5></td>
@@ -44,7 +44,7 @@ class ThingsToBook extends Component {
                             <td className="text-center"><img src={LondonCoventGarden} alt="London Covent Garden" /></td>
                         </tr>
                         <tr>
-                            <tr><p></p></tr>
+                        
                         </tr>
                         <tr>
                             <td><h5 className="booking-text">London Sightseeing</h5></td>

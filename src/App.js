@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from "./components/Header";
+import AddBudget from "./components/AddBudget";
 import AddItineraryItem from "./components/AddItineraryItem";
 import ItineraryItem from "./components/ItineraryItem";
 import Budget from "./components/Budget";
@@ -17,7 +18,8 @@ class App extends Component {
       { date: moment("04-08-19", "DD-MM-YY"), task: "Train to London", price: 60, done: false, id: uuid() },
       { date: moment("04-08-19", "DD-MM-YY"), task: "Hotel: Euston Travelodge", price: 85, done: true, id: uuid() },
       { date: moment("05-08-19", "DD-MM-YY"), task: "Theatre: Hamilton", price: 80, done: false, id: uuid() }
-    ]
+    ],
+    totalBudget: 0
   }
 
   addTask = (taskDescription, taskDate, taskPrice) => {
@@ -49,25 +51,28 @@ class App extends Component {
     })
   }
 
-calculateBudgetRemaining = () => {
-  let budgetRemaining = this.state.totalBudget - this.state.totalSpent
-  console.log(budgetRemaining)
-  return(budgetRemaining)
-}
+  calculateBudgetRemaining = () => {
+    let budgetRemaining = this.state.totalBudget - this.state.totalSpent
+    console.log(typeof budgetRemaining)
+    console.log(budgetRemaining)
+    return (budgetRemaining)
+  }
 
   calculateTotalSpend = () => {
     let totalSpent = 0
-    this.state.tasks.forEach (task => {
+    this.state.tasks.forEach(task => {
       const taskPrice = task.price
       totalSpent += taskPrice
       console.log(totalSpent)
+      console.log(typeof totalSpent)
     })
-    return(totalSpent)
+    return (totalSpent)
   }
 
   render() {
     const totalSpent = this.calculateTotalSpend()
     const budgetLeft = this.calculateBudgetRemaining()
+    console.log(typeof budgetLeft)
 
     return (
       <div className="container">
@@ -78,62 +83,62 @@ calculateBudgetRemaining = () => {
           </div>
         </div>
 
-        <div className="row">
-
-          <div className="col-md-5 col-sm-12 col-xs-12">
-            <div className="row">
-              <AddItineraryItem
-                addTaskFunction={this.addTask} />
-            </div>
-
-            <div className="row">
-              <div className="col">
-                {
-                  this.state.tasks.map((item, index) => {
-                    return <ItineraryItem
-                      taskDescription={item.task} key={index} index={index} id={item.id}
-                      taskDate={item.date}
-                      taskPrice={item.price}
-                      itemDone={item.done}
-                      addTask={this.addTask.bind(this)}
-                      deleteTaskFunction={this.deleteTask.bind(this)}
-                      doneTaskFunction={this.doneTask.bind(this)}
-                    />
-                  })
-                }
-
-              </div>
-            </div>
-
-            <div className="row">
-              <ItineraryTally taskCount={this.state.tasks.length} />
-            </div>
-
-            <div className="row">
-              <div className="col">
-
-
-                <Budget spent={totalSpent} budgetRemaining={budgetLeft}/>
-              </div>
-            </div>
-
+        <div className="row-md-6 col-sm-12 col-xs-12">
+          <div className="col margin" >
+            <ThingsToBook />
           </div>
-
-          <div className="col-md-6 col-sm-12 col-xs-12">
-            <div className="row margin" >
-              <ThingsToBook />
-            </div>
-          </div>
-
-          <div className="col-md-1 col-sm-12 col-xs-12" >
-            <div className="row margin">
-              <Tips />
-            </div>
-          </div>
-
         </div>
 
-      </div>
+        <div className="row">
+          <div className="col">
+            <AddBudget />
+          </div>
+        </div>
+
+
+        <div className="row">
+          <div className="col">
+            <AddItineraryItem
+              addTaskFunction={this.addTask} />
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col">
+            {
+              this.state.tasks.map((item, index) => {
+                return <ItineraryItem
+                  taskDescription={item.task} key={index} index={index} id={item.id}
+                  taskDate={item.date}
+                  taskPrice={item.price}
+                  itemDone={item.done}
+                  addTask={this.addTask.bind(this)}
+                  deleteTaskFunction={this.deleteTask.bind(this)}
+                  doneTaskFunction={this.doneTask.bind(this)}
+                />
+              })
+            }
+
+          </div>
+        </div>
+
+        <div className="row">
+          <ItineraryTally taskCount={this.state.tasks.length} />
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <Budget spent={totalSpent} budgetRemaining={budgetLeft} />
+          </div>
+        </div>
+
+        <div className="row-md-1 col-sm-12 col-xs-12" >
+          <div className="col margin">
+            <Tips />
+          </div>
+        </div>
+
+      </div >
     );
   }
 }
