@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
 
         return (
-            <div>
+            <div className="row-12">
                 <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1>
             </div>
         );

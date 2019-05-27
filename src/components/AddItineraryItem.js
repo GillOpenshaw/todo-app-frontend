@@ -42,39 +42,37 @@ class AddItineraryItem extends Component {
 
   }
 
-  // dateSortClicked =
-
   render() {
 
     return (
-      <div className="col">
-        <p></p>
-        <form>
-          <label className="row-12 font-weight-bold">Enter a task, estimated price, and date:</label>
-          <p></p>
-          <label className="row-2 font-weight-bold">Task:</label>
-          <input className="row-10" type="text" onChange={this.taskInputBoxChanged} />
-
-          <div>
-            <label htmlFor="dateInput" className="col-2 font-weight-bold">Date:</label>
-            <input className="row-5" id="dateInput" type="date" onChange={this.taskDateSelected} value={this.state.taskDate} />
-
-            <label className="row-2 font-weight-bold">Price:</label>
-            <input className="row-3" type="number" onChange={this.taskPriceSelected} value={this.state.taskPrice} />
+      <div className="row">
 
 
-            <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add To Your Itinerary</button>
-          </div>
+        <div>
+          <form>
+            <label className="col-12 font-weight-bold">Enter a task, estimated price, and date:</label>
+            <p></p>
+            <label className="col-2 font-weight-bold">Task:</label>
+            <input className="col-10" type="text" onChange={this.taskInputBoxChanged} />
 
-        </form>
+            <div>
+              <label htmlFor="dateInput" className="col-3 font-weight-bold">Date:</label>
+              <input className="col-4" id="dateInput" type="date" onChange={this.taskDateSelected} value={this.state.taskDate} />
+
+              <label className="col-2 font-weight-bold">Price:</label>
+              <input className="col-3" type="number" onChange={this.taskPriceSelected} value={this.state.taskPrice} />
 
 
+              <button className="btn btn-primary btn-sm m-2" onClick={this.addTaskClicked} >Add To Your Itinerary</button>
+            </div>
 
+          </form>
+        </div>
         <div className="col">
 
           <div className="row">
 
-            <div className="col-3">
+            <div className="col-4">
               <button type="button" onClick={this.dateSortClicked}><i className="fas fa-sort-alpha-down dateiconsort"></i><i className="far fa-calendar-alt dateicon"></i></button>
             </div>
 
@@ -82,31 +80,32 @@ class AddItineraryItem extends Component {
               <button type="button" onClick={this.taskSortClicked}><i className="fas fa-sort-alpha-down dateiconsort"></i><i className="far fa-calendar-check taskbutton"></i></button>
             </div>
 
-            <div className="col-2">
+            <div className="col-3">
               <button type="button" onClick={this.priceSortClicked}><i className="fas fa-sort-numeric-down poundsignsort"></i> <i className="fas fa-pound-sign poundsign"></i></button>
             </div>
 
           </div>
+        </div>
 
-          <div>
-            <div className="row">
+        <div>
+          <div className="row">
 
-              <div className="col-2">
-                <p>{this.props.taskDate}</p>
-              </div>
-              <div className="col-2">
-                <p>{this.props.taskPrice}</p>
-              </div>
-              <div className="col-6">
-                {this.props.itemCompleted ?
-                  <p className="completed">{this.props.taskDescription}</p>
-                  :
-                  <p>{this.props.taskDescription}</p>
-                }
-              </div>
+            <div className="col-4">
+              <p>{this.props.taskDate}</p>
+            </div>
+            <div className="col-2">
+              <p>{this.props.taskPrice}</p>
+            </div>
+            <div className="col-6">
+              {this.props.itemCompleted ?
+                <p className="completed">{this.props.taskDescription}</p>
+                :
+                <p>{this.props.taskDescription}</p>
+              }
             </div>
           </div>
         </div>
+
 
       </div>
 
