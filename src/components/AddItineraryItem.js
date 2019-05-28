@@ -28,7 +28,7 @@ class AddItineraryItem extends Component {
   taskPriceSelected = (event) => {
     const taskPrice = event.target.value;
     this.setState({
-      taskPrice: taskPrice
+      taskPrice: parseInt(taskPrice)
     });
   }
 
@@ -48,13 +48,6 @@ render() {
 
       <h4 className="text-center bg-primary text-white">Build Your Itinerary Here:</h4>
       <form>
-
-        <label className="col-4 font-weight-bold">Trip Name:</label>
-        <input className="col-8" type="text" onChange={this.tripNameInputBox} />
-        <label className="col-4 font-weight-bold">Total Budget:</label>
-        <input className="col-8" type="number" onChange={this.totalBudgetInputBox} />
-
-        <p></p>
 
         <label className="col-12 font-weight-bold">Enter a task, estimated price, and date:</label>
         <label className="col-2 font-weight-bold">Task:</label>
