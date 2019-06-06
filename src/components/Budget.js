@@ -13,6 +13,7 @@ class Budget extends Component {
                 <div className="col">
                     <h6>{this.props.spent}</h6>
                 </div>
+                
 
             </div>
         );
