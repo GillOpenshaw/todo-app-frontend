@@ -9,15 +9,25 @@ import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
 import uuid from "uuid/v4";
 import moment from 'moment';
+import axios from "axios";
 
 class App extends Component {
 
   state = {
     tasks: [
-      { date: moment("04-08-19", "DD-MM-YY"), task: "Train to London", price: 60, done: false, id: uuid() },
-      { date: moment("04-08-19", "DD-MM-YY"), task: "Hotel: Euston Travelodge", price: 85, done: true, id: uuid() },
-      { date: moment("05-08-19", "DD-MM-YY"), task: "Theatre: Hamilton", price: 80, done: false, id: uuid() }
-    ]
+      
+    ],
+  }
+
+  componentWillMount() {
+    axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
+      .then(response => {
+        console.log(response.data);
+        this.setState({ tasks: response.data.tasks });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   addTask = (taskDescription, taskDate, taskPrice) => {
@@ -51,15 +61,15 @@ class App extends Component {
 
   calculateTotalSpend = () => {
     let totalSpent = 0
-    this.state.tasks.forEach (task => {
+    this.state.tasks.forEach(task => {
       console.log(task)
       const taskPrice = task.price
       console.log(taskPrice)
-      
+
       totalSpent += taskPrice
-      
+
     })
-    return(totalSpent)
+    return (totalSpent)
   }
 
   render() {
@@ -87,10 +97,10 @@ class App extends Component {
                 {
                   this.state.tasks.map((item, index) => {
                     return <ItineraryItem
-                      taskDescription={item.task} key={index} index={index} id={item.id}
-                      taskDate={item.date}
+                      taskDescription={item.description} key={index} index={index} id={item.id}
+                      taskDate={moment(item.date, "DD-MM-YY")}
                       taskPrice={item.price}
-                      itemDone={item.done}
+                      itemDone={item.completed}
                       addTask={this.addTask.bind(this)}
                       deleteTaskFunction={this.deleteTask.bind(this)}
                       doneTaskFunction={this.doneTask.bind(this)}
