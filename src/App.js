@@ -9,27 +9,29 @@ import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
 import uuid from "uuid/v4";
 import moment from 'moment';
-import axios from "axios";
+//import axios from "axios";
 
 class App extends Component {
 
+  // a list of all the activity items with their description, date, price, if completed
   state = {
     tasks: [
-      
+
     ],
   }
 
-  componentWillMount() {
-    axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
-      .then(response => {
-        console.log(response.data);
-        this.setState({ tasks: response.data.tasks });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  // componentWillMount() {
+  //   axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
+  //     .then(response => {
+  //       console.log(response.data);
+  //       this.setState({ tasks: response.data.tasks });
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }
 
+  // updates the state with any new activity descriptions, date and price
   addTask = (taskDescription, taskDate, taskPrice) => {
     const currentTasks = this.state.tasks;
     const newObject = { task: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
@@ -39,6 +41,7 @@ class App extends Component {
     })
   }
 
+  // removes a task from the state if no longer required
   deleteTask = (index) => {
     let updatedTasks = this.state.tasks;
     updatedTasks.splice(index, 1);
@@ -47,6 +50,7 @@ class App extends Component {
     })
   }
 
+  // updates the state if a task has been completed
   doneTask = (id) => {
     let existingTasks = this.state.tasks;
     for (let task of existingTasks) {
@@ -59,19 +63,20 @@ class App extends Component {
     })
   }
 
+  // calculates the total spent on all the activities
   calculateTotalSpend = () => {
     let totalSpent = 0
-    this.state.tasks.forEach(task => {
+    this.state.tasks.forEach(function (task) {
       console.log(task)
-      const taskPrice = task.price
+      const taskPrice = this.task.price
       console.log(taskPrice)
-
       totalSpent += taskPrice
 
     })
     return (totalSpent)
   }
 
+  // returns a table showing the trip's itinerary and total spend for the trip
   render() {
     const totalSpent = this.calculateTotalSpend()
 

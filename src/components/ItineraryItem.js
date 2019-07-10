@@ -3,16 +3,18 @@ import './ItineraryItem.css';
 
 class ItineraryItem extends Component {
 
+    // uses the map's index to identify which activity to delete
     deleteTaskClicked = () => {
         this.props.deleteTaskFunction(this.props.index);
     }
 
+    // uses the map's index to identify which activity to mark as complete
     doneTaskClicked = () => {
         this.props.doneTaskFunction(this.props.id);
     }
 
     render() {
-
+        // displays the activities' dates, descriptions, prices with a done? and delete? icon
         return (
 
 

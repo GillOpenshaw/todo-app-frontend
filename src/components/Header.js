@@ -4,7 +4,7 @@ import LondonFlagSmall from "./LondonFlagSmall.png";
 class Header extends Component {
 
     render() {
-
+        // displays the title with a union jack flag
         return (
             <div className="row-12">
                 <h1 style={styles.header}>My <img src={LondonFlagSmall} alt="London Flag" /> Travel Wizard</h1>
