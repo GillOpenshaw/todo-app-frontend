@@ -9,7 +9,7 @@ import ThingsToBook from "./components/ThingsToBook";
 import Tips from "./components/Tips";
 import uuid from "uuid/v4";
 import moment from 'moment';
-//import axios from "axios";
+import axios from "axios";
 
 class App extends Component {
 
@@ -20,16 +20,16 @@ class App extends Component {
     ],
   }
 
-  // componentWillMount() {
-  //   axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
-  //     .then(response => {
-  //       console.log(response.data);
-  //       this.setState({ tasks: response.data.tasks });
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // }
+  componentWillMount() {
+    axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
+      .then(response => {
+        console.log(response.data);
+        this.setState({ tasks: response.data.tasks });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   // updates the state with any new activity descriptions, date and price
   addTask = (taskDescription, taskDate, taskPrice) => {
@@ -68,7 +68,7 @@ class App extends Component {
     let totalSpent = 0
     this.state.tasks.forEach(function (task) {
       console.log(task)
-      const taskPrice = this.task.price
+      const taskPrice = task.price
       console.log(taskPrice)
       totalSpent += taskPrice
 
