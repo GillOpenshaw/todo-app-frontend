@@ -17,7 +17,6 @@ class ItineraryItem extends Component {
         // displays the activities' dates, descriptions, prices with a done? and delete? icon
         return (
 
-
             <div className="row">
 
                 <div className="col-3">

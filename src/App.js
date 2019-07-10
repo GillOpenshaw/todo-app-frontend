@@ -76,8 +76,9 @@ class App extends Component {
     return (totalSpent)
   }
 
-  // returns a table showing the trip's itinerary and total spend for the trip
+  // returns a table showing the trip's itinerary, a tally of itinerary items and total spend for the trip
   render() {
+    //stores the amount from the calculateTotalSpend function 
     const totalSpent = this.calculateTotalSpend()
 
     return (
