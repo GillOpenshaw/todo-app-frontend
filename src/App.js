@@ -33,8 +33,9 @@ class App extends Component {
 
   // updates the state with any new activity descriptions, date and price
   addTask = (taskDescription, taskDate, taskPrice) => {
+    console.log(taskDescription)
     const currentTasks = this.state.tasks;
-    const newObject = { task: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
+    const newObject = { description: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
@@ -67,9 +68,7 @@ class App extends Component {
   calculateTotalSpend = () => {
     let totalSpent = 0
     this.state.tasks.forEach(function (task) {
-      console.log(task)
       const taskPrice = task.price
-      console.log(taskPrice)
       totalSpent += taskPrice
 
     })
