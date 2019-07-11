@@ -37,11 +37,11 @@ class App extends Component {
   addTask = (taskDescription, taskDate, taskPrice) => {
     const currentTasks = this.state.tasks;
     const newObject = { description: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
-    console.log(newObject)
-    currentTasks.push(newObject);
-    this.setState({
-      tasks: currentTasks
-    })
+    // console.log(newObject)
+    // currentTasks.push(newObject);
+    // this.setState({
+    //   tasks: currentTasks
+    // })
 
   // use axios to post new activity items and their corresponding data - date, price, is completed - to the database
   
@@ -55,8 +55,8 @@ class App extends Component {
           tasks: currentTasks
           });
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.log(error);
       });
     }
     
