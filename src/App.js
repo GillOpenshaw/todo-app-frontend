@@ -19,7 +19,8 @@ class App extends Component {
 
     ],
   }
-
+  // load list of activities when the App.js component is launched
+  // use axios to obtain all the activity items and their corresponding data - date, price, if completed - from the database
   componentWillMount() {
     axios.get('https://1u1aip2nu6.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
       .then(response => {
@@ -31,16 +32,34 @@ class App extends Component {
       });
   }
 
+
   // updates the state with any new activity descriptions, date and price
   addTask = (taskDescription, taskDate, taskPrice) => {
-    console.log(taskDescription)
     const currentTasks = this.state.tasks;
     const newObject = { description: taskDescription, done: false, id: uuid(), date: taskDate, price: taskPrice }
+    console.log(newObject)
     currentTasks.push(newObject);
     this.setState({
       tasks: currentTasks
     })
-  }
+
+  // use axios to post new activity items and their corresponding data - date, price, is completed - to the database
+  
+  axios.post('https://83qwfqi218.execute-api.eu-west-2.amazonaws.com/dev/tasks', 
+      newObject)
+      .then(result => {
+        const taskid = result.data.id;
+        newObject.taskid = taskid;
+        currentTasks.push(newObject);
+        this.setState({
+          tasks: currentTasks
+          });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
+    
 
   // removes a task from the state if no longer required
   deleteTask = (index) => {
